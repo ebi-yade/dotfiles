@@ -1,5 +1,6 @@
 alias zipdir='zip -r deploy.zip ./*'
 alias curl-header='curl -D - -s -o /dev/null'
+alias vs='code .'
 
 # GitHub CLI
 eval (gh completion -s fish| source)
