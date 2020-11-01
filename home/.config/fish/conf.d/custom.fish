@@ -1,7 +1,7 @@
 alias zipdir='zip -r deploy.zip ./*'
 alias curl-header='curl -D - -s -o /dev/null'
 alias vs='code (git rev-parse --show-toplevel)'
-alias gr='bd (git rev-parse --show-toplevel)'
+alias gr='cd (git rev-parse --show-toplevel)'
 
 # GitHub CLI
 eval (gh completion -s fish| source)
