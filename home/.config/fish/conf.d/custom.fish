@@ -23,8 +23,15 @@ status --is-interactive; and . (pyenv init -|psub)
 # MySQL
 set PATH /usr/local/opt/mysql@5.7/bin $PATH
 
+# PHP Composer
+set PATH $HOME/.composer/vendor/bin/ $PATH
+
 # Go
-set -x GOPATH $HOME/go/
+set -x GOPATH $HOME/go
+set PATH $GOPATH/bin $PATH
+set -x GOENV_ROOT $HOME/.goenv
+set PATH $HOME/.goenv/bin $PATH
+status --is-interactive; and source (goenv init -|psub)
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ebi-exp/google-cloud-sdk/path.fish.inc' ]; . '/Users/ebi-exp/google-cloud-sdk/path.fish.inc'; end
