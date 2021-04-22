@@ -1,7 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
+set -eu
 
-set -eux
+DOTPATH=~/dotfiles/home
 
-# install fisherman
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+cd $DOTPATH
 
+for f in .??*
+do
+    [ "$f" = ".git" ] && continue
+
+    ln -snfv "$DOTPATH/$f" "$HOME"/"$f"
+done
