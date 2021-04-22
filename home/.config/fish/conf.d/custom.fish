@@ -1,24 +1,15 @@
 alias zipdir='zip -r deploy.zip ./*'
 alias curl-header='curl -D - -s -o /dev/null'
-alias vs='code (git rev-parse --show-toplevel)'
 alias gr='cd (git rev-parse --show-toplevel)'
 
 # GitHub CLI
 eval (gh completion -s fish| source)
 
-# Create Repository on GitHub
-# Reference => https://qiita.com/ryo2132/items/2a29dd7b1627af064d7b#%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%AE%E4%BD%9C%E6%88%90
-# Example => $ ghcr my-super-program --public -d 'The best library ever!'
-function ghcr
- gh repo create $argv
- ghq get $argv[1]
- code (ghq list --full-path -e $argv[1])
-end
+# AnyEnv
+status --is-interactive; and source (anyenv init -|psub)
 
-# Pyenv
-set -x PYENV_ROOT $HOME/.pyenv
-set PATH $PYENV_ROOT/bin:$PATH
-status --is-interactive; and . (pyenv init -|psub)
+set -x EDITOR vim
+eval (direnv hook fish)
 
 # MySQL
 set PATH /usr/local/opt/mysql@5.7/bin $PATH
@@ -29,12 +20,9 @@ set PATH $HOME/.composer/vendor/bin/ $PATH
 # Go
 set -x GOPATH $HOME/go
 set PATH $GOPATH/bin $PATH
-set -x GOENV_ROOT $HOME/.goenv
-set PATH $HOME/.goenv/bin $PATH
-status --is-interactive; and source (goenv init -|psub)
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ebi-exp/google-cloud-sdk/path.fish.inc' ]; . '/Users/ebi-exp/google-cloud-sdk/path.fish.inc'; end
+if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; . "$HOME/google-cloud-sdk/path.fish.inc"; end
 
 # bind "!$" to get the last arg of the last cmd
 function bind_bang
