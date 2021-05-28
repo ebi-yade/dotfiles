@@ -21,6 +21,7 @@ set PATH $HOME/.composer/vendor/bin/ $PATH
 set -x GOPATH $HOME/go
 set PATH $GOPATH/bin $PATH
 
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; . "$HOME/google-cloud-sdk/path.fish.inc"; end
 
@@ -44,7 +45,22 @@ function bind_dollar
     end
 end
 
+# change directory with peco & ghq
+function repo_peco
+  ghq list | peco | read select_dir
+
+  if [ $select_dir ]
+    cd (ghq root)/$select_dir
+  else
+    echo "Not selected project"
+  end
+end
+
+set GHQ_SELECTOR peco
+
+# key bindings
 function fish_user_key_bindings
     bind ! bind_bang
     bind '$' bind_dollar
+    bind \c] repo_peco
 end
