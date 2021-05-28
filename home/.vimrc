@@ -122,9 +122,6 @@ if has("autocmd")
 endif
 
 " プラグインインストール
-call plug#begin('~/.vim/plugged')
-
-Plug 'editorconfig/editorconfig-vim'
-
-call plug#end()
-
+" call plug#begin('~/.vim/plugged')
+" Plug 'editorconfig/editorconfig-vim'
+" call plug#end()
