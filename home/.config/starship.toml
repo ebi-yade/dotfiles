@@ -1,0 +1,15 @@
+add_newline = false
+
+[username]
+style_root = "red bold"
+format = "[⚠️  user: $user ⚠️ ]($style) "
+disabled = false
+
+[nodejs]
+symbol = "🚀 "
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
