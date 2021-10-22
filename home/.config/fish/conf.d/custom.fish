@@ -21,6 +21,8 @@ set PATH $HOME/.composer/vendor/bin/ $PATH
 set -x GOPATH $HOME/go
 set PATH $GOPATH/bin $PATH
 
+# GPG Keys
+set -x GPG_TTY (tty)
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; . "$HOME/google-cloud-sdk/path.fish.inc"; end
