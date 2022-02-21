@@ -1,6 +1,7 @@
 alias zipdir='zip -r deploy.zip ./*'
 alias curl-header='curl -D - -s -o /dev/null'
 alias gr='cd (git rev-parse --show-toplevel)'
+alias sex='set -x'
 
 # GitHub CLI
 eval (gh completion -s fish| source)
@@ -23,6 +24,12 @@ set PATH $GOPATH/bin $PATH
 
 # GPG Keys
 set -x GPG_TTY (tty)
+
+# Starship
+starship init fish | source
+
+# aws
+set -x AWS_SDK_LOAD_CONFIG false
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; . "$HOME/google-cloud-sdk/path.fish.inc"; end
