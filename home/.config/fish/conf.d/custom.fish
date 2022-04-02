@@ -1,6 +1,6 @@
-alias zipdir='zip -r deploy.zip ./*'
-alias curl-header='curl -D - -s -o /dev/null'
-alias gr='cd (git rev-parse --show-toplevel)'
+abbr --add zipdir 'zip -r deploy.zip ./*'
+abbr --add curl-header 'curl -D - -s -o /dev/null'
+abbr --add gr 'cd (git rev-parse --show-toplevel)'
 abbr --add sex 'set -x'
 
 # GitHub CLI
@@ -25,8 +25,12 @@ set PATH $GOPATH/bin $PATH
 # GPG Keys
 set -x GPG_TTY (tty)
 
+# Rust
+set PATH $HOME/.cargo/bin $PATH
+
 # Starship
 starship init fish | source
+set -x STARSHIP_CONFIG ~/.config/starship.toml
 
 # aws
 set -x AWS_SDK_LOAD_CONFIG false
