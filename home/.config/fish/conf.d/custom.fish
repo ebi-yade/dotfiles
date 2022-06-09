@@ -20,7 +20,7 @@ set PATH $HOME/.composer/vendor/bin/ $PATH
 
 # Go
 set -x GOPATH $HOME/go
-set PATH $GOPATH/bin $PATH
+set -x PATH $GOPATH/bin $PATH
 
 # GPG Keys
 set -x GPG_TTY (tty)
