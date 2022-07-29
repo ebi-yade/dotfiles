@@ -29,7 +29,7 @@ set -x GPG_TTY (tty)
 starship init fish | source
 
 # aws
-set -x AWS_SDK_LOAD_CONFIG false
+set -x AWS_SDK_LOAD_CONFIG true
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; . "$HOME/google-cloud-sdk/path.fish.inc"; end
