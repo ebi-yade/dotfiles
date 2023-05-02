@@ -8,8 +8,19 @@ disabled = false
 [nodejs]
 symbol = "🚀 "
 
-[aws]
+[golang]
 disabled = true
 
+[aws]
+disabled = false
+format = 'on [$symbol$profile]($style) '
+
 [gcloud]
+disabled = false
+format = '| [$active]($style) '
+
+[docker_context]
 disabled = true
+
+[kubernetes]
+disabled = false

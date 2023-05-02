@@ -45,6 +45,10 @@ set -x PATH $HOME/.nodenv/shims $PATH
 # aws
 set -x AWS_SDK_LOAD_CONFIG true
 
+# kubectl
+abbr --add k 'kubectl'
+kubectl completion fish | source
+
 # bind "!$" to get the last arg of the last cmd
 function bind_bang
     switch (commandline -t)[-1]
