@@ -24,3 +24,9 @@ disabled = true
 
 [kubernetes]
 disabled = false
+
+[kubernetes.context_aliases]
+'dev.local.cluster.k8s' = 'dev'
+'.*/openshift-cluster/.*' = 'openshift'
+'gke_(?P<var_project>[\w-]+)_.*_(?P<var_cluster>[\w-]+)' = '$var_project|$var_cluster'
+
