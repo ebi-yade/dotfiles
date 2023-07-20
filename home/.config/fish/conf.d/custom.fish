@@ -3,6 +3,7 @@ alias curl-header='curl -D - -s -o /dev/null'
 abbr --add gr 'cd (git rev-parse --show-toplevel)'
 abbr --add sex 'set -x'
 abbr --add term 'kill'
+abbr --add ga 'gcloud config configurations activate'
 
 # ls
 set -x LSCOLORS gxfxcxdxbxegedabagacad
