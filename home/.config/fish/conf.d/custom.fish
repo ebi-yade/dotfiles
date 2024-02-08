@@ -43,6 +43,9 @@ starship init fish | source
 # Nodenv
 set -x PATH $HOME/.nodenv/shims $PATH
 
+# aqua
+set -x PATH $HOME/.local/share/aquaproj-aqua/bin $PATH
+
 # aws
 set -x AWS_SDK_LOAD_CONFIG true
 
